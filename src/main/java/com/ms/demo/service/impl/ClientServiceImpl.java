@@ -2,6 +2,8 @@ package com.ms.demo.service.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.ms.demo.service.facade.ClientService;
 @Service
 public class ClientServiceImpl implements ClientService{
 
+	Logger logger= LoggerFactory.getLogger(ClientService.class);
 	@Autowired
 	private ClientDao clientDao;
 	
@@ -22,6 +25,7 @@ public class ClientServiceImpl implements ClientService{
 
 	@Override
 	public List<Client> findByVille(String ville) {
+		logger.debug("find By Ville :"+ville);
 		return clientDao.findByVille(ville);
 	}
 

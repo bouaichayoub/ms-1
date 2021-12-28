@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Commande {
 
@@ -16,6 +18,7 @@ public class Commande {
 	private String ref;
 	private double total;
 	private double totalPaye;
+	@JsonIgnore
 	@ManyToOne
 	private Client client;
 	

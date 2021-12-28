@@ -14,7 +14,7 @@ import com.ms.demo.bean.Client;
 import com.ms.demo.service.facade.ClientService;
 
 @RestController
-@RequestMapping(value="api/client")
+@RequestMapping(value="/api/client")
 public class ClientRest {
 	@Autowired
 	ClientService clientService;
